@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Interior Design</title>
+</head>
+<body>
+    <header id="header">
+        <div class="logo-section">
+            <img src="{%static 'images/logo.png'%}" alt="logo" id="header-img" class="logo-sec">
+        </div>
+        <nav class="navigation-bar" id="nav-bar">
+            <ul style="list-style-type:none ;" class="navigation">
+                <li><a href="#mordern" class="nav-link">Mordern</a></li>
+                <li><a href="#story" class="nav-link">Our Story</a></li>
+                <li><a href="#design" class="nav-link">Work log</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+     <main>
+        <div class="container">
+            
+            <section id="mordern" class="cover-section">
+                <div class="title-text">
+                    <h1>H Mordern</h1>
+                    <p>&prcue; We Design Your Home &harrw; With Trendy Design &prcue;</p>
+                </div>
+                <div class="box-feature">
+                    <img src="{%static 'images/Header.jpg'%}" alt="cover-image" class="cover-image">
+                </div>
+            </section>
+            <!----------story---------->
+            <section id="story" class="story-section">
+                <div class="section-text">
+                    <h2>Our Story</h2>
+                    <p>Furnishing your home can be quite overwhelming at times, at least that's how it was for us.
+                    <br><br>H_Mordern was born to help others going through the maze that is interior design<br><br>Designing is a creative and interesting way to adorn a home. Product among Women. It’s the best opportunity and demands full control of inventory due to everyone wants to make their home the best. </p>
+                </div>
+                <div class="box-feature">
+                    <img src="{%static 'images/story_img.jpg'%}" alt="story_img">
+                </div>
+            </section>
+
+                        
+        <section id="design" class="samples">
+            <div class="section-text">
+                <h2>Featured</h2>
+                <p>Take a look at some of our featured pics that have made editorial debuts</p>
+            </div>
+            <div class="featured">
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/Dining table.jpg'%}" alt="table">
+                        <figcaption>
+                            <a href="#">Dining Table</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/bathroom.jpg'%}" alt="">
+                        <figcaption>
+                            <a href="#">Bathroom</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/living_room.jpg'%}" alt="">
+                        <figcaption>
+                            <a href="#">Living Room</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/study_room.jpg' %}" alt="">
+                        <figcaption>
+                            <a href="#">Studyroom</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/work_area.jpg'%}" alt="">
+                        <figcaption>
+                            <a href="#">work Area</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="work">
+                    <figure>
+                        <img src="{%static 'images/wardrobe.jpg'%}" alt="">
+                        <figcaption>
+                            <a href="#">Wardrobe</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <p id="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u8yjUmmbfno" title="YouTube video player" frameborder="7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </p>
+                <figcaption>Watch Video to Know More About Interior Design</figcaption>
+            </div>
+        </section>
+
+
+
+        <!-- Contact section -->
+
+        <section id="contact" class="contact-section">
+            <div class="section-text">
+                <h2>Receive our Catalogue</h2>
+                <p>We would love to hear you! <br><br> To get our monthly catalogue subscribe by filling
+                the following form with your name and email address.</p>
+            </div>
+            <div class="contact-info">
+                <div class="form-box">
+                    <form  method = "post" action="" id="form" class="contact-form">
+                        {% csrf_token %}
+                        <label for="name" class="form-entry">Name <br>
+                            <input name="name" id="name" type="text" class="txt-box" placeholder=" &nbsp;Enter Your Name" required><br>
+                        </label>
+                        <label for="email" class="form-entry">Email <br>
+                            <input name="email" id="email" type="email" class="txt-box" placeholder="&nbsp;Enter Your Email" required><br>
+                        </label>
+                        <label for="message" class="form-entry">Message <br>
+                            <textarea type="textarea" id="" name="message" class="txt-box" placeholder="&nbsp;Additional Message" required></textarea><br>
+                        </label><br>
+                        <input type="submit" id="submit" value="Submit" class="btn">
+                    </form>
+                </div>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <!--------footer---------->
+
+
+    <footer class="footer-section">
+        <div class="footer-info">
+            <ul style="list-style-type:none ;">
+                <li><span>Privacy</span></li>
+                <li><span>Terms</span></li>
+                <li><span>Contact</span></li>
+            </ul>
+        </div>
+        <span class="p-info">Created By Nayeem</span>
+        <span>Copyright &copy; 2022</span>
+    </footer>
+
+
+
+
+
+</body>
+</html>
