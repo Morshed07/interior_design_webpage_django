@@ -31,10 +31,12 @@ class StoryImage(models.Model):
     def __str__(self) -> str:
         return self.title
     
-class FeaturedImage(models.Model):
-    title = models.CharField(max_length=50)
-    banner = models.ImageField(upload_to='featured_images')
-    show =  models.BooleanField(default=True)
+class WorkLog(models.Model):
+    title = models.CharField(max_length=50,unique = True)
+    slug = models.SlugField(unique=True,max_length=50)
+    thumbnail = models.ImageField(upload_to='image_gallery')
+    description = models.TextField(null=True,blank=True,default='N/A')
+    show = models.BooleanField(default=True)
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:

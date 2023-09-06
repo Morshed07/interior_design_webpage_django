@@ -3,10 +3,17 @@ from home.models import (
     Contact,
     StartUpImage,
     StoryImage,
-    FeaturedImage
+    WorkLog
 )
 # Register your models here.
+
+class WorkLogAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug":('title',)}
+
+
+
 admin.site.register(Contact)
 admin.site.register(StartUpImage)
 admin.site.register(StoryImage)
-admin.site.register(FeaturedImage)
+admin.site.register(WorkLog,WorkLogAdmin)
+

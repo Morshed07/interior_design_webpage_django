@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <title>Interior Design</title>
 </head>
 <body>
@@ -31,9 +31,16 @@
                     <p>&prcue; We Design Your Home &harrw; With Trendy Design &prcue;</p>
                 </div>
                 <div class="box-feature">
-                    <img src="{%static 'images/Header.jpg'%}" alt="cover-image" class="cover-image">
+                    {% for banner in banners %}
+                    
+                    <img src="{{banner.banner.url}}" alt="cover-image" class="cover-image">
+                    
+                    {% endfor %}
                 </div>
             </section>
+
+
+
             <!----------story---------->
             <section id="story" class="story-section">
                 <div class="section-text">
@@ -42,7 +49,9 @@
                     <br><br>H_Mordern was born to help others going through the maze that is interior design<br><br>Designing is a creative and interesting way to adorn a home. Product among Women. It’s the best opportunity and demands full control of inventory due to everyone wants to make their home the best. </p>
                 </div>
                 <div class="box-feature">
-                    <img src="{%static 'images/story_img.jpg'%}" alt="story_img">
+                    {% for story_img in storyimages %}
+                    <img src="{{story_img.banner.url}}" alt="story_img">
+                    {% endfor %}
                 </div>
             </section>
 
@@ -53,54 +62,18 @@
                 <p>Take a look at some of our featured pics that have made editorial debuts</p>
             </div>
             <div class="featured">
+            {% for worklog in worklogs %}
                 <div class="work">
                     <figure>
-                        <img src="{%static 'images/Dining table.jpg'%}" alt="table">
+                        
+                        <a href="{% url 'details' worklog.slug %}"><img src="{{worklog.thumbnail.url}}" alt="table"></a>
                         <figcaption>
-                            <a href="#">Dining Table</a>
+                            <a href="{% url 'details' worklog.slug %}">{{worklog.title}}</a>
                         </figcaption>
+                        
                     </figure>
-                </div>
-                <div class="work">
-                    <figure>
-                        <img src="{%static 'images/bathroom.jpg'%}" alt="">
-                        <figcaption>
-                            <a href="#">Bathroom</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="work">
-                    <figure>
-                        <img src="{%static 'images/living_room.jpg'%}" alt="">
-                        <figcaption>
-                            <a href="#">Living Room</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="work">
-                    <figure>
-                        <img src="{%static 'images/study_room.jpg' %}" alt="">
-                        <figcaption>
-                            <a href="#">Studyroom</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="work">
-                    <figure>
-                        <img src="{%static 'images/work_area.jpg'%}" alt="">
-                        <figcaption>
-                            <a href="#">work Area</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="work">
-                    <figure>
-                        <img src="{%static 'images/wardrobe.jpg'%}" alt="">
-                        <figcaption>
-                            <a href="#">Wardrobe</a>
-                        </figcaption>
-                    </figure>
-                </div>
+                    </div>
+            {% endfor %}
             </div>
             
             <div class="video-section">

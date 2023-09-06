@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'css/all.min1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>Product Details</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="box">
+            
+            <div class="images">
+                
+                <div class="img-holder active">
+                    <img src="{{worklog.thumbnail.url}}">
+                </div>
+                
+            </div>
+            <div class="basic-info">
+                <h1>{{worklog.title}}</h1>
+                <!-- <div class="rate">
+                    <i class="filled fas fa-star"></i>
+                    <i class="filled fas fa-star"></i>
+                    <i class="filled fas fa-star"></i>
+                    <i class="filled fas fa-star"></i>
+                    <i class="filled fas fa-star"></i>
+                </div> -->
+                <!-- <span>$250</span> -->
+                <!-- <div class="options">
+                    <a href="#">Buy It Now</a>
+                    <a href="#">Add to Cart</a>
+                </div> -->
+            </div>
+            <div class="description">
+                <p>{{worklog.description}}</p>
+                
+                <ul class="social">
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
